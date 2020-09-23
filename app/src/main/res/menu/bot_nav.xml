@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/trim"
+        android:title="Trim" />
+    <item
+        android:icon="@drawable/ic_baseline_speed_24"
+        android:title="Speed" />
+    <item
+        android:icon="@drawable/ic_baseline_music_note_24"
+        android:title="Add Music" />
+</menu>

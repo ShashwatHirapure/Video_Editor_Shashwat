@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "778023363416",
+    "firebase_url": "https://video-editor-87ae0.firebaseio.com",
+    "project_id": "video-editor-87ae0",
+    "storage_bucket": "video-editor-87ae0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778023363416:android:3194532e1c924fa1563b2d",
+        "android_client_info": {
+          "package_name": "com.kirti.videoeditor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778023363416-paaq3j4c3kih0rosi3acg7cmqhbkec5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kirti.videoeditor",
+            "certificate_hash": "fd6a97e105a1ea28a361ca75660e2789bc429995"
+          }
+        },
+        {
+          "client_id": "778023363416-krp7t6tm7s2sut7uq16h0b73u2erciqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6uLR5WeCyICl1cYdO-Ym_RH87LhEh-kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778023363416-krp7t6tm7s2sut7uq16h0b73u2erciqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
