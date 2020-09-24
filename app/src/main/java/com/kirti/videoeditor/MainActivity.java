@@ -62,8 +62,9 @@ public class MainActivity extends AppCompatActivity {
         pd.setCancelable(false);
         speed = new ArrayAdapter(this, android.R.layout.simple_list_item_1, speedarray);
         vv.setMediaController(new MediaController(this));
-        chooseFile();
         f = getExternalFilesDir(Environment.DIRECTORY_MOVIES);
+        chooseFile();
+
         bot_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
