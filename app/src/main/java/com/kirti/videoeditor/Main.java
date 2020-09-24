@@ -88,6 +88,10 @@ public class Main extends AppCompatActivity {
                             RecyclerView rv = findViewById(R.id.rv_video);
                             rv.setHasFixedSize(true);
                             rv.setLayoutManager(new LinearLayoutManager(Main.this));
+                            rv.setItemViewCacheSize(20);
+                            rv.setDrawingCacheEnabled(true);
+                            rv.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+
                             rv.setAdapter(a);
                         } else {
                             Log.w("TAG", "Error getting documents.", task.getException());

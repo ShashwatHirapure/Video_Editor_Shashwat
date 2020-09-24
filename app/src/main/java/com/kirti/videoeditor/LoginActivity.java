@@ -1,7 +1,10 @@
 package com.kirti.videoeditor;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,11 +19,42 @@ public class LoginActivity extends AppCompatActivity {
     public EditText et_mobile;
     public FancyButton bt_login;
     ProgressDialog pd;
-
+    String[] permissionArrays = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    int REQUEST_CODE = 101;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissionArrays, REQUEST_CODE );
+        } else {
+           start();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        boolean openActivityOnce = true;
+        boolean openDialogOnce = true;
+        if (requestCode == REQUEST_CODE ) {
+            for (int i = 0; i < grantResults.length; i++) {
+                String permission = permissions[i];
+                 boolean isPermitted = grantResults[i] == PackageManager.PERMISSION_GRANTED;
+
+                if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        requestPermissions(permissionArrays, REQUEST_CODE );
+                    }
+
+                }else {
+                    start();
+                }
+            }
+        }
+    }
+    public void start(){
         pd = new ProgressDialog(LoginActivity.this);
         pd.setCancelable(false);
         pd.setMessage("Wait....");
@@ -46,5 +80,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, Main.class));
             finish();
         }
+
     }
 }

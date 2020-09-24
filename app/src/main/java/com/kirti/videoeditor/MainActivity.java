@@ -106,10 +106,30 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 101) {
             if (resultCode == RESULT_OK) {
                 Videopath = UriUtils.getPath(MainActivity.this, data.getData());
+                System.out.println("===========VideoPath=========="+Videopath);
                 vv.setVideoPath(Videopath);
                 vv.start();
+                /*
+                EpEditor.execCmd("ffmpeg -i " + Videopath + " -vcodec libx264 -crf 24 " + f.getPath() + "/test.mp4", 0, new OnEditorListener() {
+                    @Override
+                    public void onSuccess() {
+                        Videopath=f.getPath()+"/test.mp4";
 
 
+                    }
+
+                    @Override
+                    public void onFailure() {
+
+                    }
+
+                    @Override
+                    public void onProgress(float progress) {
+
+                    }
+                });
+
+*/
             }
         } else if (requestCode == 102) {
             if (resultCode == RESULT_OK) {
